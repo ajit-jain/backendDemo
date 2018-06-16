@@ -17,8 +17,8 @@ module.exports = {
         try{
             console.log("getUser route");
             let twitter = new Twitter();
-            let user = await twitter.getUser(req.body);
-            res.send({user});
+            let {user,token} = await twitter.getUser(req.body);
+            res.send({user,token});
         }catch(e){
 
             res.status(500).send({
