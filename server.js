@@ -3,7 +3,10 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 let app = express();
-app.use(bodyParser({extended:true}));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(bodyParser.json());
 app.use(cors());
 require('./config/routes')(app);
 
@@ -19,6 +22,6 @@ require('./config/routes')(app);
 //     res.send(result);
 // })
 
-app.listen(3000,()=>{
+app.listen(3000, () => {
     console.log("connected to server");
 });
