@@ -22,6 +22,6 @@ require('./config/routes')(app);
 //     res.send(result);
 // })
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log("connected to server");
 });
