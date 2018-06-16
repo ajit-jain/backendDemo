@@ -18,7 +18,7 @@ module.exports = {
             console.log("getUser route");
             let twitter = new Twitter();
             let {user,token} = await twitter.getUser(req.body);
-            res.send({user,token});
+            res.send({user,token,message:'Login Successful'});
         }catch(e){
 
             res.status(500).send({
