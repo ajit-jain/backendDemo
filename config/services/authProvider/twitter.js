@@ -20,7 +20,7 @@ module.exports =class twitterClass{
     async getUser(data){
         let {accessToken, accessSecret} = await this.getAccesToken(data);
         let user = await this.verifyUser({accessToken, accessSecret});
-        return {user,token:accessToken};
+        return {user,token:accessToken,message:'Login Successful'};
     }
     getRequestToken(){
         return new Promise((resolve,reject)=>{
