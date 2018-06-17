@@ -5,9 +5,9 @@ const promise = require('bluebird');
 module.exports =class twitterClass{
     constructor(){
         this.twitter = new Twitter({
-            consumerKey: '3iuYxjH7fgNowbIKLQ8tiL2PR',
-            consumerSecret: 'vULlzG9N9Ppj0guv3Pm16CxcK43ACH2zAEc2ZLbjRb2yPJXNOI',
-            callback: 'http://127.0.0.1:4200/'
+            consumerKey: TWITTER_CONSUMER_KEY || '3iuYxjH7fgNowbIKLQ8tiL2PR',
+            consumerSecret: TWITTER_CONSUMER_SECRET || 'vULlzG9N9Ppj0guv3Pm16CxcK43ACH2zAEc2ZLbjRb2yPJXNOI',
+            callback: process.env.TWITTER_CALLBACK || 'http://127.0.0.1:4200/'
         });
         this.twitter= promise.promisifyAll(this.twitter);
 
